@@ -9,7 +9,7 @@ Let's go back in time to answer this question. We will be taking the path of goi
 
 ## Newton's Law of gravitation
 
-*Newton's Law of gravitation* states that there is a *Force* between two particles that have mass, that make them attract.
+*Newton's Law of gravitation* states that there is a *Force* between two particles that have mass, that pushes them towards each other.
 
 [[Graphic of Newton's Law of gravitation working on two particles]]
 

@@ -7,7 +7,7 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setAnimationLoop( animate );
-document.body.appendChild( renderer.domElement );
+document.getElementById("simulation1").appendChild( renderer.domElement );
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 2);
 scene.add(ambientLight);
@@ -22,7 +22,7 @@ const earth = new THREE.Mesh (earthGeometry, earthMaterial);
 scene.add( earth );
 
 
-const moonTexture = textureLoader.load('moon.png');
+const moonTexture = textureLoader.load('textures/moon.png');
 const moonGeometry = new THREE.SphereGeometry(1);
 const moonMaterial = new THREE.MeshStandardMaterial({
     map: moonTexture
