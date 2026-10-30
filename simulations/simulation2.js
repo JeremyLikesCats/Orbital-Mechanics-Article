@@ -1,12 +1,21 @@
-import * as THREE from 'three'
+const simulation = document.getElementById("simulation2");
 
-const scene = THREE.Scene()
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000)
-const renderer = new THREE.WebGLRenderer()
-renderer.setSize( window.innerWidth, window.innerHeight );
-renderer.setAnimationLoop( animate );
-document.getElementById("simulation2").appendChild( renderer.domElement );
+const ctx = simulation.getContext("2d");
 
-const ambientLight = new THREE.AmbientLight(0xffffff, 2);
-scene.add(ambientLight);
+ctx.fillStyle = "black";
 
+class Particle {
+    constructor(initialPosition, radius, ctx) {
+        this.initialPosition = initialPosition;
+        this.radius = radius;
+        this.ctx = ctx;
+    }
+    draw() {
+        this.ctx.beginPath();
+        this.ctx.arc(this.initialPosition.x, this.initialPosition.y, this.radius, 0, 2 * Math.PI);
+        this.ctx.stroke();
+    }
+}
+
+particle1 = new Particle(new Vector2(-5, 0), 5, ctx);
+particle1.draw();

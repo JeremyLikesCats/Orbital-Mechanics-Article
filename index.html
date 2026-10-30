@@ -20,6 +20,9 @@
         <script>
             window.MathJax = { tex: { inlineMath: [['\$$', '\$$']] } };
         </script>
+
+        <script type="module" src="scripts/Vector2.js"></script>
+
         <script type="module" src="simulations/simulation1.js"></script>
         <script type="module" src="simulations/simulation2.js"></script>
     </head>
@@ -30,6 +33,8 @@
         
         <h2>Newton's Law of Gravitation</h2>
         <p>Newton's Law of gravitation states that there is a force between two particles that have mass, that pushes them towards each other.</p>
-        <div id="simulation2"></div>
+        <canvas id="simulation2" style="border: 1px solid #ccc;"></canvas>
+
+
     </body>
 </html>
