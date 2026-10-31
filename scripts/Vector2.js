@@ -19,6 +19,10 @@ export class Vector2 {
         let divideAmount = Math.sqrt(vector.x ** 2 + vector.y ** 2)
         return new Vector2(vector.x/divideAmount, vector.y/divideAmount)
     }
+    scaled(magnitude) {
+        return new Vector2(this.x * magnitude, this.y * magnitude);
+    }
+
     getMagnitude(){
         return Math.sqrt(this.x ** 2 + this.y ** 2)
     }
