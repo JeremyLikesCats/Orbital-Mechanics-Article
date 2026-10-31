@@ -9,20 +9,22 @@ const ctx = simulation.getContext("2d");
 
 ctx.fillStyle = "black";
 
-const particle1OriginalPosition = new Vector2(50, 75);
-const particle2OriginalPosition = new Vector2(250, 25);
+let particle1OriginalPosition = new Vector2(50, 75);
+let particle2OriginalPosition = new Vector2(250, 75);
 
-const particle1OriginalVelocity = Vector2.ZERO;
-const particle2OriginalVelocity = Vector2.ZERO;
+let particle1OriginalVelocity = Vector2.ZERO;
+let particle2OriginalVelocity = Vector2.ZERO;
 
-const particle1Radius = 20;
-const particle2Radius = 20;
+let particle1Radius = 20;
+let particle2Radius = 20;
 
-const particle1Mass = 500;
-const particle2Mass = 500;
+let particle1Mass = 500;
+let particle2Mass = 500;
 
-const particle1Offset = Vector2.ZERO;
-const particle2Offset = new Vector2(0, 5)
+let particle1Offset = Vector2.ZERO;
+let particle2Offset = new Vector2(0, 5);
+
+const arrowScale = 1/50000;
 
 class Particle {
     constructor(initialPosition, radius, mass, velocity, ctx, arrowOffset=Vector2.ZERO) {
@@ -39,7 +41,7 @@ class Particle {
         this.ctx.beginPath();
         this.ctx.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI);
         this.ctx.stroke();
-        this.drawArrow(this.acceleration.scaled(this.mass/50000));
+        this.drawArrow(this.acceleration.scaled(this.mass * arrowScale));
     }
 
     drawArrow(vector) {

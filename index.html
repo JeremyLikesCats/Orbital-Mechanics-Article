@@ -25,6 +25,7 @@
 
         <script type="module" src="simulations/simulation1.js"></script>
         <script type="module" src="simulations/simulation2.js"></script>
+        <script type="module" src="simulations/simulation3.js"></script>
     </head>
     <body>
         <h3>How do the planets in our universe move?</h3>
@@ -35,6 +36,19 @@
         <p>Newton's Law of gravitation states that there is a force between two particles that have mass, that pushes them towards each other.</p>
         <canvas id="simulation2" style="border: 1px solid #ccc;"></canvas>
         <button type="button" id="simulation2_reset">Reset</button>
-
+        <p>Notice that the force between them gets much stronger as they get closer together.</br></br>
+        In the simulation below, try to simulate the following:</br>
+        - Make the particles twice as close to each other. What multiplier did the force increase by? (answer box)</br>
+        - Make the particles thrice as close to each other. What multiplier did the force increase by? (answer box)</p>
+        <canvas id="simulation3" style="border: 1px solid #ccc;"></canvas>
+        <button type="button" id="simulation3_reset">Reset</button>
+        <input 
+            type="range" 
+            id="simulation3_slider" 
+            min="50" 
+            max="300" 
+            value="50" 
+            step="1"
+        >
     </body>
 </html>

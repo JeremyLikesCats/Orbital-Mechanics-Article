@@ -15,7 +15,7 @@ Let's go back in time to answer this question. We will be taking the path of goi
 
 Notice that the force between them gets much stronger as they get closer together.
 
-In the simulation below, try do simulate the following:
+In the simulation below, try to simulate the following:
 - Make the particles twice as close to each other. What multiplier did the force increase by? (answer box)
 - Make the particles thrice as close to each other. What multiplier did the force increase by? (answer box)
 
@@ -23,7 +23,7 @@ In the simulation below, try do simulate the following:
 
 Notice, that the amount the force change is proportional to the *square* of their distance. 
 
-In the simulation below, try do simulate the following:
+In the simulation below, try to simulate the following:
 - Make one of the particles twice as heavy. What multiplier did the force increase by? (answer box)
 - Make the other particle three times as heavy. What multiplier did the force increase by? (answer box)
 
