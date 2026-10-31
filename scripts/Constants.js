@@ -1,1 +1,1 @@
-export const G = 0.5
+export const G = 50000
