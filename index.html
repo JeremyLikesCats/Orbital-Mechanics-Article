@@ -34,34 +34,39 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="style/style.css">
+
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
     </head>
     <body>
         <h1>How do the planets in our universe move?</h1>
         <div id="simulation1" style="width: 80vw !important; height: 80vh !important;"></div>
         <p>Let's go back in time to answer this question. We will be taking the path of going from Newton's Law of Gravitation, and seeing how this motivates Kepler's 3 Laws. </p>
-        
         <h2>Newton's Law of Gravitation</h2>
         <p>Newton's Law of gravitation states that there is a force between two particles that have mass, that pushes them towards each other.</p>
         <canvas id="simulation2" style="border: 1px solid #ccc;"></canvas>
         <button type="button" id="simulation2_reset">Reset</button>
         <p>Notice that the force between them gets much stronger as they get closer together.</br></br>
         In the simulation below, try to simulate the following:</br>
-        - Make the particles twice as close to each other. What multiplier did the force increase by? (answer box)</br>
-        - Make the particles thrice as close to each other. What multiplier did the force increase by? (answer box)</p>
+        - Make the particles twice as close to each other. What multiplier did the force increase by? </br>
+        - Make the particles thrice as close to each other. What multiplier did the force increase by? </p>
         <canvas id="simulation3" style="border: 1px solid #ccc;"></canvas>
         <input 
             type="range" 
             id="simulation3_slider" 
-            min="50" 
-            max="300" 
-            value="50" 
+            min="100" 
+            max="400" 
+            value="200" 
             step="1"
         >
-        <p>Notice, that the amount the force change is proportional to the *square* of their distance. </br></br>
+        <p>Notice, that the amount the force change is proportional to the <i>square</i> of their distance. </br></br>
 
 In the simulation below, try to simulate the following:</br>
-- Make one of the particles twice as heavy. What multiplier did the force increase by? (answer box)</br>
-- Make the other particle three times as heavy. What multiplier did the force increase by? (answer box)</p>
+- Make one of the particles twice as heavy. What multiplier did the force increase by?</br>
+- Make the other particle three times as heavy. What multiplier did the force increase by? </p>
         <canvas id="simulation4" style="border: 1px solid #ccc;"></canvas>
         <input 
             type="range" 
@@ -84,8 +89,8 @@ In the simulation below, try to simulate the following:</br>
 
 Therefore, we can state the following:</br></br>
 
-(Newton's law of gravitation)</br>
-$$F = \frac{G m_1 m_2}{r^2}$$ for some constant G, which we call the *gravitational constant*. It has a value of ..., which is *tiny*! This is good, because you don't want everything to suddenly get attracted to each other.</p>
+<em>(Newton's law of gravitation)</em></br>
+$$F = \frac{G m_1 m_2}{r^2}$$ for some constant G, which we call the <i>gravitational constant</i>. It has a value of $6.67430 \times 10^{-11} \text{ N}\cdot\text{m}^2/\text{kg}^2$, which is <i>tiny</i>! This is good, because you don't want everything to suddenly get attracted to each other.</p>
 
         <h2>Kepler's three laws</h2>
         <h3>Law 1</h3>
@@ -104,9 +109,9 @@ $$F = \frac{G m_1 m_2}{r^2}$$ for some constant G, which we call the *gravitatio
         <input 
             type="range" 
             id="simulation7_slider" 
-            min="70" 
-            max="150" 
-            value="113"
+            min="125" 
+            max="250" 
+            value="150"
             step="1"
         >
         <button type="button" id="simulation7_reset">Reset</button>
