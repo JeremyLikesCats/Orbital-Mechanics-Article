@@ -26,6 +26,7 @@
         <script type="module" src="simulations/simulation1.js"></script>
         <script type="module" src="simulations/simulation2.js"></script>
         <script type="module" src="simulations/simulation3.js"></script>
+        <script type="module" src="simulations/simulation4.js"></script>
     </head>
     <body>
         <h3>How do the planets in our universe move?</h3>
@@ -41,13 +42,34 @@
         - Make the particles twice as close to each other. What multiplier did the force increase by? (answer box)</br>
         - Make the particles thrice as close to each other. What multiplier did the force increase by? (answer box)</p>
         <canvas id="simulation3" style="border: 1px solid #ccc;"></canvas>
-        <button type="button" id="simulation3_reset">Reset</button>
         <input 
             type="range" 
             id="simulation3_slider" 
             min="50" 
             max="300" 
             value="50" 
+            step="1"
+        >
+        <p>Notice, that the amount the force change is proportional to the *square* of their distance. </br></br>
+
+In the simulation below, try to simulate the following:</br>
+- Make one of the particles twice as heavy. What multiplier did the force increase by? (answer box)</br>
+- Make the other particle three times as heavy. What multiplier did the force increase by? (answer box)</p>
+        <canvas id="simulation4" style="border: 1px solid #ccc;"></canvas>
+        <input 
+            type="range" 
+            id="simulation4_slider1" 
+            min="500" 
+            max="2000" 
+            value="500" 
+            step="1"
+        >
+        <input 
+            type="range" 
+            id="simulation4_slider2" 
+            min="500" 
+            max="2000" 
+            value="500" 
             step="1"
         >
     </body>

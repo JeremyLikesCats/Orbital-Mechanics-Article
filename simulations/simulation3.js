@@ -3,7 +3,6 @@ import {G} from "/scripts/Constants.js";
 
 const simulation = document.getElementById("simulation3");
 
-const resetButton = document.getElementById("simulation3_reset");
 const distanceSlider = document.getElementById("simulation3_slider");
 
 const ctx = simulation.getContext("2d");
@@ -43,6 +42,7 @@ class Particle {
         this.ctx.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI);
         this.ctx.stroke();
         this.drawArrow(this.acceleration.scaled(this.mass * arrowScale));
+
     }
 
     drawArrow(vector) {
@@ -65,7 +65,14 @@ class Particle {
         this.ctx.lineTo(to.x - headLength * Math.cos(angle - arrowAngle), to.y - headLength * Math.sin(angle - arrowAngle));
         this.ctx.lineTo(to.x - headLength * Math.cos(angle + arrowAngle), to.y - headLength * Math.sin(angle + arrowAngle));
         this.ctx.lineTo(to.x, to.y);
-        ctx.stroke();
+        this.ctx.stroke();
+
+        // Add label showing magnitude
+        this.ctx.font = "bold 10px Arial";
+        this.ctx.textAlign = "center";
+        this.ctx.fillStyle = "red";
+        this.ctx.fillText(String(Math.round(vector.getMagnitude())) + "N", this.position.x + vector.x/3 * 2, to.y -10);
+
     }
     update(dt) {
 
@@ -88,25 +95,6 @@ class Particle {
 const particle1 = new Particle(particle1OriginalPosition.copy(), particle1Radius, particle1Mass, particle1OriginalVelocity.copy(), ctx, particle1Offset.copy());
 const particle2 = new Particle(particle2OriginalPosition.copy(), particle2Radius, particle2Mass, particle2OriginalVelocity.copy(), ctx, particle2Offset.copy());
 
-function handleCollision(particle1, particle2) {
-    if (particle1.position.squaredDistanceBetween(particle2.position) <= (particle1.radius + particle2.radius) ** 2) {
-        particle1.stopped = true
-        particle2.stopped = true
-        let difference_vector = new Vector2(particle2.position.x - particle1.position.x, particle2.position.y - particle1.position.y);
-        let difference_magnitude = difference_vector.getMagnitude();
-        let correction_magnitude = (particle2.radius + particle1.radius - difference_magnitude);
-        let correction_vector = Vector2.normalize(difference_vector, correction_magnitude);
-        particle1.position.x -= correction_vector.x * correction_magnitude / 2;
-        particle1.position.y -= correction_vector.y * correction_magnitude / 2;
-        particle2.position.x += correction_vector.x * correction_magnitude / 2;
-        particle2.position.y += correction_vector.y * correction_magnitude / 2;
-        particle1.velocity.x = 0
-        particle1.velocity.y = 0
-        particle2.velocity.x = 0
-        particle2.velocity.y = 0
-    }
-}
- 
 function reset() {
     particle1.stopped = false;
     particle2.stopped = false;
@@ -114,9 +102,6 @@ function reset() {
     particle1.position = particle1OriginalPosition.copy();
     particle2.position = particle2OriginalPosition.copy(); 
 }
-
-// Button controls
-resetButton.addEventListener("click", reset)
 
 
 distanceSlider.addEventListener("input", (e) => {

@@ -27,7 +27,7 @@ In the simulation below, try to simulate the following:
 - Make one of the particles twice as heavy. What multiplier did the force increase by? (answer box)
 - Make the other particle three times as heavy. What multiplier did the force increase by? (answer box)
 
-[[Gravitation law simulation - distance]]
+[[Gravitation law simulation - mass]]
 
 The force is also proportional to each of their masses!
 
