@@ -220,7 +220,7 @@ function physicsProcess(now) {
     ctx.font = "bold 20px Inter";
     ctx.textAlign = "left";
     ctx.fillStyle = "white";
-    ctx.fillText("Time period: " + timePeriod.toFixed(2), 15, 30);
+    ctx.fillText("Time period: " + timePeriod.toFixed(2) + "s", 15, 30);
     requestAnimationFrame(physicsProcess);
 }
 requestAnimationFrame(physicsProcess);
