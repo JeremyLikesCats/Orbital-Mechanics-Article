@@ -3,20 +3,23 @@ import {G} from "/scripts/Constants.js";
 
 const simulation = document.getElementById("simulation2");
 
+simulation.width = simulation.clientWidth;
+simulation.height = simulation.clientHeight;
+
 const resetButton = document.getElementById("simulation2_reset");
 
 const ctx = simulation.getContext("2d");
 
 ctx.fillStyle = "black";
 
-let particle1OriginalPosition = new Vector2(50, 75);
-let particle2OriginalPosition = new Vector2(250, 75);
+let particle1OriginalPosition = new Vector2(simulation.width/6, simulation.height/2);
+let particle2OriginalPosition = new Vector2(5 * simulation.width/6, simulation.height/2);
 
 let particle1OriginalVelocity = Vector2.ZERO;
 let particle2OriginalVelocity = Vector2.ZERO;
 
-let particle1Radius = 20;
-let particle2Radius = 20;
+let particle1Radius = simulation.height/10;
+let particle2Radius = simulation.height/10;
 
 let particle1Mass = 500;
 let particle2Mass = 500;
@@ -24,7 +27,7 @@ let particle2Mass = 500;
 let particle1Offset = Vector2.ZERO;
 let particle2Offset = new Vector2(0, 5);
 
-const arrowScale = 1/50000;
+const arrowScale = 1/10000;
 
 class Particle {
     constructor(initialPosition, radius, mass, velocity, ctx, arrowOffset=Vector2.ZERO) {

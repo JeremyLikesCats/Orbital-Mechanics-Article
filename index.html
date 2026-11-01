@@ -21,16 +21,23 @@
             window.MathJax = { tex: { inlineMath: [['\$$', '\$$']] } };
         </script>
 
+        <!-- JavaScript -->
         <script type="module" src="scripts/Vector2.js"></script>
 
         <script type="module" src="simulations/simulation1.js"></script>
         <script type="module" src="simulations/simulation2.js"></script>
         <script type="module" src="simulations/simulation3.js"></script>
         <script type="module" src="simulations/simulation4.js"></script>
+        <script type="module" src="simulations/simulation5.js"></script>
+        <script type="module" src="simulations/simulation6.js"></script>
+        <script type="module" src="simulations/simulation7.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="style/style.css">
     </head>
     <body>
-        <h3>How do the planets in our universe move?</h3>
-        <div id="simulation1"></div>
+        <h1>How do the planets in our universe move?</h1>
+        <div id="simulation1" style="width: 80vw !important; height: 80vh !important;"></div>
         <p>Let's go back in time to answer this question. We will be taking the path of going from Newton's Law of Gravitation, and seeing how this motivates Kepler's 3 Laws. </p>
         
         <h2>Newton's Law of Gravitation</h2>
@@ -72,5 +79,36 @@ In the simulation below, try to simulate the following:</br>
             value="500" 
             step="1"
         >
+
+        <p>The force is also proportional to each of their masses!</br></br>
+
+Therefore, we can state the following:</br></br>
+
+(Newton's law of gravitation)</br>
+$$F = \frac{G m_1 m_2}{r^2}$$ for some constant G, which we call the *gravitational constant*. It has a value of ..., which is *tiny*! This is good, because you don't want everything to suddenly get attracted to each other.</p>
+
+        <h2>Kepler's three laws</h2>
+        <h3>Law 1</h3>
+        <p>Planets travel around the sun in <b>elliptical</b> orbits.</p>
+
+        <canvas id="simulation5" style="border: 1px solid #ccc;"></canvas>
+
+
+        <h3>Law 2</h3>
+        <p>The area swept out by the planet over a period of time is constant.</p>
+        <canvas id="simulation6" style="border: 1px solid #ccc;"></canvas>
+
+        <h3>Law 3</h3>
+        <p>The square of the planet's <i>time period</i> of orbit is directly proportional to the cube of its <i>semimajor axis</i>.</p>
+        <canvas id="simulation7" style="border: 1px solid #ccc;"></canvas>
+        <input 
+            type="range" 
+            id="simulation7_slider" 
+            min="70" 
+            max="150" 
+            value="113"
+            step="1"
+        >
+        <button type="button" id="simulation7_reset">Reset</button>
     </body>
 </html>

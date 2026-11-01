@@ -1,12 +1,12 @@
 import * as THREE from 'three'
-
+const simulation = document.getElementById("simulation1");
 const timer = new THREE.Timer()
 const scene = new THREE.Scene()
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000)
+const camera = new THREE.PerspectiveCamera( 60, simulation.clientWidth / simulation.clientHeight, 0.1, 1000)
 
 const renderer = new THREE.WebGLRenderer()
-renderer.setSize( window.innerWidth, window.innerHeight );
-renderer.setAnimationLoop( animate );
+renderer.setSize( simulation.clientWidth, simulation.clientHeight );
+
 document.getElementById("simulation1").appendChild( renderer.domElement );
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 2);
@@ -14,7 +14,7 @@ scene.add(ambientLight);
 
 const textureLoader = new THREE.TextureLoader();
 const earthTexture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_atmos_2048.jpg');
-const earthGeometry = new THREE.SphereGeometry(2);
+const earthGeometry = new THREE.SphereGeometry(simulation.clientHeight/30);
 const earthMaterial = new THREE.MeshStandardMaterial({
     map: earthTexture
 });
@@ -23,7 +23,7 @@ scene.add( earth );
 
 
 const moonTexture = textureLoader.load('textures/moon.png');
-const moonGeometry = new THREE.SphereGeometry(1);
+const moonGeometry = new THREE.SphereGeometry(simulation.clientHeight/60);
 const moonMaterial = new THREE.MeshStandardMaterial({
     map: moonTexture
 });
@@ -35,9 +35,9 @@ const pivot = new THREE.Group();
 scene.add( pivot );
 pivot.add(moon);
 
-camera.position.z = 20;
+camera.position.z = simulation.clientHeight/3;
 
-moon.position.x = -10;
+moon.position.x = -simulation.clientHeight/7;
 
 earth.rotation.x = Math.PI/2;
 earth.rotation.y = Math.PI/2
@@ -53,3 +53,4 @@ function animate ( time ) {
     renderer.render( scene, camera );
 }
 
+renderer.setAnimationLoop( animate );

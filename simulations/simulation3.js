@@ -3,6 +3,9 @@ import {G} from "/scripts/Constants.js";
 
 const simulation = document.getElementById("simulation3");
 
+simulation.width = simulation.clientWidth;
+simulation.height = simulation.clientHeight;
+
 const distanceSlider = document.getElementById("simulation3_slider");
 
 const ctx = simulation.getContext("2d");

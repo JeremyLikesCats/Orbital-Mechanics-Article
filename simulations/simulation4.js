@@ -3,6 +3,9 @@ import {G} from "/scripts/Constants.js";
 
 const simulation = document.getElementById("simulation4");
 
+simulation.width = simulation.clientWidth;
+simulation.height = simulation.clientHeight;
+
 const massSlider1 = document.getElementById("simulation4_slider1");
 const massSlider2 = document.getElementById("simulation4_slider2");
 
